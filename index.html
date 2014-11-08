@@ -1,257 +1,599 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+<html lang="en">
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+<head>
 
-    <title>Jquery-awesome-cursor by jwarby</title>
-  </head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A jQuery plugin for using FontAwesome icons as custom CSS cursors.  Use any FontAwesome icon, in any color, and any size.">
+  <meta name="author" content="James Warwood">
 
-  <body>
-    <header>
-      <div class="inner">
-        <h1>Jquery-awesome-cursor</h1>
-        <h2>jQuery plugin for using FontAwesome icons as custom CSS cursors</h2>
-        <a href="https://github.com/jwarby/jquery-awesome-cursor" class="button"><small>View project on</small> GitHub</a>
+  <title>Awesome Cursor - a jQuery plugin for using FontAwesome icons as custom CSS cursors</title>
+
+  <!-- External CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="bower_components/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="css/heroic-features.css" rel="stylesheet">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+
+  <!-- Favicons (by http://realfavicongenerator.net/) -->
+  <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="favicon/favicon-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="favicon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="favicon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="favicon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="msapplication-TileImage" content="favicon/mstile-144x144.png">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">jQuery Awesome Cursor</a>
       </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <big>
+          <ul class="nav navbar-nav">
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#usage">Usage</a></li>
+            <li><a href="#options">Options</a></li>
+            <li><a href="#examples">Examples</a></li>
+            <li><a href="#roadmap-and-releases">Roadmap and Releases</a></li>
+            <li><a href="#bugs-and-feature-requests">Bug and Feature Requests</a></li>
+            <li><a href="#license-information">License Information</a></li>
+          </ul>
+        </big>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Jumbotron Header -->
+    <header class="jumbotron hero-spacer">
+      <h1>jQuery Awesome Cursor</h1>
+      <p>A jQuery plugin for using FontAwesome icons as custom CSS cursors.  Works in Chrome, FireFox and IE11.</p>
+      <p>Try hovering over <a href="#" id="demo-link">this!</a></p>
+      <br>
+      <p>
+        <a href="https://github.com/jwarby/jquery-awesome-cursor" class="btn btn-lg btn-primary"><i class="fa fa-github"></i> View on GitHub</a>
+        <a href="https://github.com/jwarby/jquery-awesome-cursor/fork" class="btn btn-lg btn-success"><i class="fa fa-code-fork"></i> Fork me on GitHub!</a>
+      </p>
     </header>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h1>
-<a name="jquery-awesome-cursor-plugin-" class="anchor" href="#jquery-awesome-cursor-plugin-"><span class="octicon octicon-link"></span></a>jQuery Awesome Cursor plugin <a href="http://badge.fury.io/gh/jwarby%2Fjquery-awesome-cursor"><img src="https://badge.fury.io/gh/jwarby%2Fjquery-awesome-cursor.svg" alt="GitHub version"></a>
-</h1>
+    <section id="installation">
+      <div class="row">
+        <div class="col-lg-12">
+          <!-- Basic demo -->
+          <h2>Installation</h2>
 
-<p><a href="https://travis-ci.org/jwarby/jquery-awesome-cursor"><img src="https://secure.travis-ci.org/jwarby/jquery-awesome-cursor.png?branch=master" alt="Build Status"></a>
-<a href="https://david-dm.org/jwarby/jquery-awesome-cursor"><img src="https://david-dm.org/jwarby/jquery-awesome-cursor.svg?style=flat" alt="Dependency Status"></a>
-<a href="https://david-dm.org/jwarby/jquery-awesome-cursor#info=devDependencies"><img src="https://david-dm.org/jwarby/jquery-awesome-cursor/dev-status.svg?style=flat" alt="devDependency Status"></a></p>
+          <div class="panel-group" id="installation-accordion" role="tablist" aria-multiselectable="true">
 
-<p>A jQuery plugin for using FontAwesome icons as custom CSS cursors.</p>
+            <!-- via Bower -->
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="bower">
+                <h4 class="panel-title">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#installation-accordion" href="#bowerPanel" aria-expanded="false" aria-controls="bower">
+                    via Bower <i class="fa fa-chevron-circle-down pull-right"></i><i class="fa fa-chevron-circle-up pull-right"></i>
+                  </a>
+                </h4>
+              </div>
+              <div id="bowerPanel" class="panel-collapse collapse" role="tabpanel" aria-labelledby="bower">
+                <div class="panel-body">
+                  <p>In your terminal:</p>
+                  <pre>$ bower install awesome-cursor</pre>
 
-<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'body'</span><span class="p">).</span><span class="nx">awesomeCursor</span><span class="p">(</span><span class="s1">'pencil'</span><span class="p">);</span>
-</pre></div>
+                  <p>In your web page:</p>
+                  <pre>
+  &lt;link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css" type="text/css"&gt;
+  &lt;script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;script src="bower_components/awesome-cursor/dist/jquery.awesome-cursor.min.js" type="text/javascript"&gt;&lt;/script&gt;</pre>
+                </div>
+              </div>
+            </div>
 
-<p>Requires <a href="http://jquery.com">jQuery</a> and <a href="http://fontawesome.io">FontAwesome</a>.</p>
+            <!-- via npm -->
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="npm">
+                <h4 class="panel-title">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#installation-accordion" href="#npmPanel" aria-expanded="false" aria-controls="npm">
+                    via npm <i class="fa fa-chevron-circle-down pull-right"></i><i class="fa fa-chevron-circle-up pull-right"></i>
+                  </a>
+                </h4>
+              </div>
+              <div id="npmPanel" class="panel-collapse collapse" role="tabpanel" aria-labelledby="npm">
+                <div class="panel-body">
+                  <p>In your terminal:</p>
+                  <pre>$ npm install awesome-cursor</pre>
 
-<h2>
-<a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting started</h2>
+                  <p>In your web page:</p>
+                  <pre>
+  &lt;link rel="stylesheet" href="/path/to/font-awesome.min.css" type="text/css"&gt;
+  &lt;script src="/path/to/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;script src="node_modules/awesome-cursor/dist/jquery.awesome-cursor.min.js" type="text/javascript"&gt;&lt;/script&gt;</pre>
+                </div>
+              </div>
+            </div>
 
-<h3>
-<a name="installing-the-plugin" class="anchor" href="#installing-the-plugin"><span class="octicon octicon-link"></span></a>Installing the plugin</h3>
+            <!-- via download -->
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="download">
+                <h4 class="panel-title">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#installation-accordion" href="#downloadPanel" aria-expanded="false" aria-controls="download">
+                    download <i class="fa fa-chevron-circle-down pull-right"></i><i class="fa fa-chevron-circle-up pull-right"></i>
+                  </a>
+                </h4>
+              </div>
+              <div id="downloadPanel" class="panel-collapse collapse" role="tabpanel" aria-labelledby="download">
+                <div class="panel-body">
+                  <div class="alert alert-warning">
+                    <p>The download links below are for the latest versions of the code, which <strong>may</strong> be unstable.</p>
 
-<h4>
-<a name="via-bower-easiest" class="anchor" href="#via-bower-easiest"><span class="octicon octicon-link"></span></a>via <code>bower</code>: Easiest</h4>
+                    <p>To view the latest <strong>stable</strong> release, and previous releases, please visit <strong><a href="https://github.com/jwarby/jquery-awesome-cursor">https://github.com/jwarby/jquery-awesome-cursor</a></strong>.</p>
+                  </div>
 
-<div class="highlight highlight-shell"><pre>bower install awesome-cursor
-</pre></div>
+                  <p>Download just the script:</p>
+                  <a class="btn btn-primary btn-lg" href="https://raw.githubusercontent.com/jwarby/jquery-awesome-cursor/master/dist/jquery.awesome-cursor.min.js"><i class="fa fa-file-text-o"></i>&nbsp;&nbsp;jquery.awesome-cursor.min.js (production)</a>
+                  <a class="btn btn-primary btn-lg" href="https://raw.githubusercontent.com/jwarby/jquery-awesome-cursor/master/dist/jquery.awesome-cursor.js"><i class="fa fa-file-text"></i>&nbsp;&nbsp;jquery.awesome-cursor.js (development)</a>
 
-<div class="highlight highlight-html"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"bower_components/fontawesome/css/font-awesome.min.css"</span> <span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"bower_components/jquery/dist/jquery.min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"bower_components/awesome-cursor/dist/jquery.awesome-cursor.min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
-</pre></div>
+                  <br><br>
+                  <p>Or download an archive of the latest code:</p>
+                  <a class="btn btn-primary btn-lg" href="https://github.com/jwarby/jquery-awesome-cursor/zipball/master"><i class="fa fa-file-archive-o"></i>&nbsp;&nbsp;.zip</a>
+                  <a class="btn btn-primary btn-lg" href="https://github.com/jwarby/jquery-awesome-cursor/tarball/master"><i class="fa fa-file-archive-o"></i>&nbsp;&nbsp;.tar.gz</a>
+                  <br>
+                  <br>
 
-<h4>
-<a name="via-npm-easier" class="anchor" href="#via-npm-easier"><span class="octicon octicon-link"></span></a>via <code>npm</code>: Easier</h4>
+                  <p>Then, in your web page:</p>
+                  <pre>
+  &lt;link rel="stylesheet" href="/path/to/font-awesome.min.css" type="text/css"&gt;
+  &lt;script src="/path/to/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;script src="/path/to/jquery.awesome-cursor.min.js" type="text/javascript"&gt;&lt;/script&gt;</pre>
+                </div>
+              </div>
+            </div>
 
-<div class="highlight highlight-shell"><pre>npm install awesome-cursor
-</pre></div>
-
-<div class="highlight highlight-html"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/path/to/font-awesome.min.css"</span> <span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/path/to/jquery.min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"node_modules/awesome-cursor/dist/jquery.awesome-cursor.min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
-</pre></div>
-
-<h4>
-<a name="manual-installation" class="anchor" href="#manual-installation"><span class="octicon octicon-link"></span></a>manual installation</h4>
-
-<p>Download the <a href="https://raw.githubusercontent.com/jwarby/jquery-awesome-cursor/master/dist/jquery.awesome-cursor.min.js">production version</a> or the <a href="https://raw.githubusercontent.com/jwarby/jquery-awesome-cursor/master/dist/jquery.awesome-cursor.js">development version</a>.</p>
-
-<p>In your web page:</p>
-
-<div class="highlight highlight-html"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/path/to/font-awesome.min.css"</span> <span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/path/to/jquery.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"path/to/awesome-cursor.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-</pre></div>
-
-<h2>
-<a name="documentation" class="anchor" href="#documentation"><span class="octicon octicon-link"></span></a>Documentation</h2>
-
-<h3>
-<a name="setting-a-cursor" class="anchor" href="#setting-a-cursor"><span class="octicon octicon-link"></span></a>Setting a cursor</h3>
-
-<p>You can set a FontAwesome cursor on any element by calling <code>awesomeCursor</code>, and passing the name of the icon you
-want to use:</p>
-
-<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'body'</span><span class="p">).</span><span class="nx">awesomeCursor</span><span class="p">(</span><span class="s1">'&lt;icon name&gt;'</span><span class="p">);</span>
-</pre></div>
-
-<p>See <a href="http://fontawesome.io/icons/">http://fontawesome.io/icons/</a> for a list of available icons.</p>
-
-<h3>
-<a name="setting-cursor-options" class="anchor" href="#setting-cursor-options"><span class="octicon octicon-link"></span></a>Setting cursor options</h3>
-
-<h4>
-<a name="colour" class="anchor" href="#colour"><span class="octicon octicon-link"></span></a>Colour</h4>
-
-<p>Cursors can be any color you want, specified as a CSS color:</p>
-
-<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'body'</span><span class="p">).</span><span class="nx">awesomeCursor</span><span class="p">(</span><span class="s1">'eyedropper'</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">color</span><span class="o">:</span> <span class="s1">'#ff0000'</span>
-<span class="p">})</span>
-</pre></div>
-
-<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'body'</span><span class="p">).</span><span class="nx">awesomeCursor</span><span class="p">(</span><span class="s1">'eyedropper'</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">color</span><span class="o">:</span> <span class="s1">'rgba(255, 255, 255, 0.75)'</span>
-<span class="p">})</span>
-</pre></div>
-
-<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'body'</span><span class="p">).</span><span class="nx">awesomeCursor</span><span class="p">(</span><span class="s1">'eyedropper'</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">color</span><span class="o">:</span> <span class="s1">'cyan'</span>
-<span class="p">});</span>
-</pre></div>
-
-<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'body'</span><span class="p">).</span><span class="nx">awesomeCursor</span><span class="p">(</span><span class="s1">'eyedropper'</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">color</span><span class="o">:</span> <span class="s1">'hsl(90, 100%, 50%)'</span>
-<span class="p">});</span>
-</pre></div>
-
-<h4>
-<a name="size" class="anchor" href="#size"><span class="octicon octicon-link"></span></a>Size</h4>
-
-<p>Cursors can be any size (specified in pixels):</p>
-
-<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'body'</span><span class="p">).</span><span class="nx">awesomeCursor</span><span class="p">(</span><span class="s1">'pencil'</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">size</span><span class="o">:</span> <span class="mi">32</span>
-<span class="p">});</span>
-</pre></div>
-
-<p>Only pixel values are supported, as CSS cursor hotspots can only be specified in pixels.</p>
-
-<h4>
-<a name="hotspot" class="anchor" href="#hotspot"><span class="octicon octicon-link"></span></a>Hotspot</h4>
-
-<p>The hotspot for a cursor can be defined, with an array containing the hotspot's x and y offsets:</p>
-
-<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'body'</span><span class="p">).</span><span class="nx">awesomeCursor</span><span class="p">(</span><span class="s1">'pencil'</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">hotspot</span><span class="o">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">17</span><span class="p">]</span>
-<span class="p">});</span>
-</pre></div>
-
-<p>Or, using a string descriptor:</p>
-
-<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'body'</span><span class="p">).</span><span class="nx">awesomeCursor</span><span class="p">(</span><span class="s1">'pencil'</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">hotspot</span><span class="o">:</span> <span class="s1">'bottom left'</span>
-<span class="p">});</span>
-</pre></div>
-
-<h5>
-<a name="string-descriptors" class="anchor" href="#string-descriptors"><span class="octicon octicon-link"></span></a>String descriptors</h5>
-
-<p>The following values can be used in the hotspot string descriptor:</p>
-
-<ul>
-<li>
-<code>'center'</code>: positions the hotspot's x and y offset in the center of the cursor</li>
-<li>
-<code>'left'</code>  : positions the hotspot's x offset on the left of the cursor (equivalent to 0)</li>
-<li>
-<code>'right'</code> : positions the hotspot's x offset on the far right of the cursor (equivalent to cursorSize - 1)</li>
-<li>
-<code>'top'</code>   : positions the hotspot's y offset at the top of the cursor (equivalent to 0)</li>
-<li>
-<code>'bottom'</code>: positions the hotspot's y offset at the bottom of the cursor (equivalent to cursorSize - 1)</li>
-</ul>
-
-<p>The descriptors can be combined by space-separating them, e.g.:</p>
-
-<ul>
-<li><code>'top left'</code></li>
-<li><code>'center left'</code></li>
-<li><code>'bottom right'</code></li>
-<li><code>'top right'</code></li>
-<li>etc.</li>
-</ul>
-
-<h2>
-<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
-
-<div class="highlight highlight-javascript"><pre><span class="cm">/* Set the body element's cursor to a green pencil, with the hotspot located at the bottom left of the cursor (where the</span>
-<span class="cm"> * pencil tip is):</span>
-<span class="cm"> */</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">'body'</span><span class="p">).</span><span class="nx">awesomeCursor</span><span class="p">(</span><span class="s1">'pencil'</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">color</span><span class="o">:</span> <span class="s1">'green'</span><span class="p">,</span>
-  <span class="nx">hotspot</span><span class="o">:</span> <span class="s1">'bottom left'</span>
-<span class="p">});</span>
-
-<span class="c1">// Set the cursor to be a big blue location arrow icon:</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">'body'</span><span class="p">).</span><span class="nx">awesomeCursor</span><span class="p">(</span><span class="s1">'location-arrow'</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">color</span><span class="o">:</span> <span class="s1">'#0050FF'</span><span class="p">,</span>
-  <span class="nx">hotspot</span><span class="o">:</span> <span class="s1">'top right'</span><span class="p">,</span>
-  <span class="nx">size</span><span class="o">:</span> <span class="mi">48</span>
-<span class="p">});</span>
-</pre></div>
-
-<h2>
-<a name="browser-support" class="anchor" href="#browser-support"><span class="octicon octicon-link"></span></a>Browser Support</h2>
-
-<ul>
-<li>Chrome</li>
-<li>FireFox</li>
-</ul>
-
-<h2>
-<a name="bugs" class="anchor" href="#bugs"><span class="octicon octicon-link"></span></a>Bugs</h2>
-
-<ul>
-<li><a href="https://github.com/jwarby/jquery-awesome-cursor/issues">https://github.com/jwarby/jquery-awesome-cursor/issues</a></li>
-</ul>
-
-<h2>
-<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
-
-<p>See <a href="https://github.com/jwarby/jquery-awesome-cursor/blob/master/CONTRIBUTING.md">CONTRIBUTING.md</a></p>
-
-<h2>
-<a name="roadmap" class="anchor" href="#roadmap"><span class="octicon octicon-link"></span></a>Roadmap</h2>
-
-<ul>
-<li>Allow cursors to be flipped (vertically and/or horizontally) and rotated by an abitrary number of degrees</li>
-<li>Support for composite cursors made of up of multiple icons, a la FontAwesome stacked icons (?)</li>
-</ul>
-
-<h2>
-<a name="release-history" class="anchor" href="#release-history"><span class="octicon octicon-link"></span></a>Release History</h2>
-
-<p><em>(Nothing yet)</em></p>
-        </section>
-
-        <aside id="sidebar">
-          <a href="https://github.com/jwarby/jquery-awesome-cursor/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/jwarby/jquery-awesome-cursor/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
-
-          <p class="repo-owner"><a href="https://github.com/jwarby/jquery-awesome-cursor"></a> is maintained by <a href="https://github.com/jwarby">jwarby</a>.</p>
-
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-  
-  </body>
+    <hr>
+
+    <section id="usage">
+      <div class="row">
+        <div class="col-lg-12">
+          <!-- Basic demo -->
+          <h2>Usage</h2>
+
+          <p>To set a cursor on an element, just call <code>$('&lt;selector&gt;').awesomeCursor('&lt;icon name&gt;');</code></p>
+          <p>For example, to use the <a href="http://fontawesome.io/icon/pencil/">pencil icon</a>
+          as the <code>&lt;body&gt;</code> element's cursor, do the following:</p>
+          <br>
+          <pre>$('body').awesomeCursor('pencil');</pre>
+          <br>
+
+          <p>Cursors also support a number of options, which are detailed in the next section.</p>
+          <p>Options are set by passing an object as the second parameter to <code>awesomeCursor()</code>:</p>
+          <br>
+          <pre>$('body').awesomeCursor('pencil', {
+    /* your options here */
+  });</pre>
+        </div>
+      </div>
+    </section>
+    <hr>
+
+    <section id="options">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2>Options</h2>
+
+          <p>The cursor attributes can be configured using the options listed below.</p>
+
+          <div class="panel-group" id="options-accordion" role="tablist" aria-multiselectable="true">
+
+            <!-- Icon demo -->
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="icon">
+                <h4 class="panel-title">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#options-accordion" href="#iconPanel" aria-expanded="false" aria-controls="icon">
+                    Icon <i class="fa fa-chevron-circle-down pull-right"></i><i class="fa fa-chevron-circle-up pull-right"></i>
+                  </a>
+                </h4>
+              </div>
+              <div id="iconPanel" class="panel-collapse collapse" role="tabpanel" aria-labelledby="icon">
+                <div class="panel-body">
+                  <code class="subtle">type: <strong>String</strong></code>
+                  <p>The first parameter to <code>awesomeCursor</code> is the icon name.</p>
+
+                  <br>
+                  <pre>$('body').awesomeCursor('pencil');</pre>
+                  <br>
+
+                  <h4><u>Try it now!</u></h4>
+                  <form class="form-horizontal" id="try-icon">
+                    <div class="control-group">
+                      <label for="icon-name" class="col-lg-1"><big><strong>Icon name:</strong></big>
+                      </label>
+                      <div class="col-lg-3">
+                        <input class="form-control" name="icon-name" type="text" value="pencil">
+                      </div>
+                    </div>
+                  </form>
+                  <small>Pssst! Stuck for ideas? Try these:</small>
+                  <a href="#" class="suggestion">paint-brush</a>
+                  <a href="#" class="suggestion">paper-plane</a>
+                  <a href="#" class="suggestion">expand</a>
+                  <a href="#" class="suggestion">hand-o-up</a>
+                  <a href="#" class="suggestion">ban</a>
+                </div>
+              </div>
+            </div>
+            <!-- Color demo -->
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="color">
+                <h4 class="panel-title">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#options-accordion" href="#colorPanel" aria-expanded="false" aria-controls="color">
+                    Color
+                    <i class="fa fa-chevron-circle-down pull-right"></i><i class="fa fa-chevron-circle-up pull-right"></i>
+                    <code class="subtle pull-right">default: '#000000'</code>
+                  </a>
+                </h4>
+              </div>
+              <div id="colorPanel" class="panel-collapse collapse" role="tabpanel" aria-labelledby="color">
+                <div class="panel-body">
+                  <code class="subtle">type: <strong>String</strong></code>
+                  <p>The color of a cursor can be changed by setting the <code>color</code> option to any valid CSS color string:
+                    <ul>
+                      <li>'red'</li>
+                      <li>'rgb(255, 0, 0)'</li>
+                      <li>'hsl(0, 100%, 50%)'</li>
+                      <li><em>etc.</em></li>
+                    </ul>
+                  </p>
+
+                  <br>
+                  <pre>$('body').awesomeCursor('pencil', {
+    color: 'red'
+  });</pre>
+
+                  <br>
+                  <h4><u>Try it now!</u></h4>
+                  <form class="form-horizontal try" data-property="color">
+                    <div class="control-group">
+                      <label for="color" class="col-lg-1"><big><strong>Color:</strong></big>
+                      </label>
+                      <div class="col-lg-3">
+                        <input class="form-control" name="color" type="text" value="red">
+                      </div>
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+            <!-- Size demo -->
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="size">
+                <h4 class="panel-title">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#options-accordion" href="#sizePanel" aria-expanded="false" aria-controls="size">
+                    Size
+                    <i class="fa fa-chevron-circle-down pull-right"></i><i class="fa fa-chevron-circle-up pull-right"></i>
+                    <code class="subtle pull-right">default: 14</code>
+                  </a>
+                </h4>
+              </div>
+              <div id="sizePanel" class="panel-collapse collapse" role="tabpanel" aria-labelledby="size">
+                <div class="panel-body">
+                  <code class="subtle">type: <strong>Number</strong></code>
+                  <p>The size of the cursor can be changed by setting the <code>size</code> option.</p>
+                  <p><em>Note: cursor sizes can only be defined in pixels, as the cursor hotspot CSS syntax only supports pixels</em></p>
+
+                  <br>
+                  <pre>$('body').awesomeCursor('pencil', {
+    size: 32
+  });</pre>
+
+                  <br>
+                  <h4><u>Try it now!</u></h4>
+                  <form class="form-horizontal try" data-property="size">
+                    <div class="control-group">
+                      <label for="size" class="col-lg-1"><big><strong>Size:</strong></big>
+                      </label>
+                      <div class="col-lg-3">
+                        <input class="form-control" name="size" type="number" value="32" step="6" max="128" min="2">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hotspot demo -->
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="hotspot">
+                <h4 class="panel-title">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#options-accordion" href="#hotspotPanel" aria-expanded="false" aria-controls="hotspot">
+                    Hotspot
+                    <i class="fa fa-chevron-circle-down pull-right"></i><i class="fa fa-chevron-circle-up pull-right"></i>
+                    <code class="subtle pull-right">default: [0, 0]</code>
+                  </a>
+                </h4>
+              </div>
+              <div id="hotspotPanel" class="panel-collapse collapse" role="tabpanel" aria-labelledby="hotspot">
+                <div class="panel-body">
+                  <code class="subtle">type: <strong>String</strong> or <strong>Array</strong></code>
+                  <p>The hotspot location of the cursor can be defined using the <code>hotspot</code> option.  This allows you to configure the point that the actual click will emanate from.</p>
+
+                  <p>The hotspot can be configured in two different ways: using an array containing the <code>[x, y]</code> coordinates (in pixels) of the hotspot, or by using a descriptive <code>string</code>.</p>
+                  <p>If you're using an array of coordinates, the values will be clamped between 0 and the size of the cursor minus 1.  This is because the browser will default to <code>0, 0</code> for coordinates beyond the
+                  boundaries of the cursor.</p>
+
+                  <br>
+                  <h5><strong>Example: defining the hotspot using an array</strong></h5>
+                  <br>
+                  <pre>$('body').awesomeCursor('pencil', {
+    hotspot: [5, 7]
+  });</pre>
+
+                  <br>
+                  <h5><strong>Example: defining the hotspot using a descriptive string</strong></h5>
+                  <p>The strings 'bottom', 'top', 'left', 'right' and 'center' are recognised.  These values can be combined by space-separating them; some examples are shown below:</p>
+                  <ul>
+                    <li>'bottom left'</li>
+                    <li>'center'</li>
+                    <li>'center top'</li>
+                    <li>'center right'</li>
+                    <li>'top right'</li>
+                  </ul>
+
+                  <br>
+                  <pre>$('body').awesomeCursor('pencil', {
+    hotspot: 'bottom left'
+  });</pre>
+                  <br>
+
+                  <h4><u>Try it now!</u></h4>
+                  <form class="form-horizontal try" data-property="hotspot">
+                    <div class="control-group">
+                      <label for="hotspot" class="col-lg-1"><big><strong>Hotspot location:</strong></big>
+                      </label>
+                      <div class="col-lg-3">
+                        <select class="form-control" name="hotspot">
+                          <option>top left</option>
+                          <option>center top</option>
+                          <option>top right</option>
+                          <option>center left</option>
+                          <option>center</option>
+                          <option>center right</option>
+                          <option selected>bottom left</option>
+                          <option>center bottom</option>
+                          <option>bottom right</option>
+                        </select>
+                      </div>
+                    </div>
+                  </form>
+                  <br>
+                  <br>
+                  <div class="well sub-well">
+                    <h5>Click below to test hotspot location:</h5>
+                    <canvas width="200" height="200"></canvas>
+                    <button class="btn btn-default clear-canvas"><i class="fa fa-eraser"></i> Clear</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Overriding defaults section -->
+          <h4 name="overriding-default-options">Overriding default options</h4>
+          <p>The default values for all options are exposed by <code>$.fn.awesomeCursor.defaults</code>.  This means you can easily override default options:</p>
+
+          <pre>$.fn.awesomeCursor.defaults.color = 'white'; // Default color for all cursors is now white </pre>
+        </div>
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- Title -->
+    <section id="examples">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2>Examples</h2>
+
+          <p>Hover your cursor over the boxes to see the example cursors</p>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <!-- Page Features -->
+      <div class="row text-center">
+
+        <div class="col-md-4 col-sm-6 hero-feature">
+          <div class="thumbnail">
+            <div class="example" id="example1"></div>
+            <div class="caption">
+              <h3>Blue Paper Plane With Top Right Hotspot</h3>
+              <pre>$('#example1')
+    .awesomeCursor('paper-plane', {
+      color: '#2cb2da',
+      hotspot: 'top right'
+    });</pre>
+              <p>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 hero-feature">
+          <div class="thumbnail">
+            <div class="example" id="example2"></div>
+            <div class="caption">
+              <h3>Big Green Paintbrush</h3>
+              <pre>$('#example2')
+    .awesomeCursor('paint-brush', {
+      color: '#34db33',
+      size: 32
+    });</pre>
+              <p>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 hero-feature">
+          <div class="thumbnail">
+            <div class="example" id="example3"></div>
+            <div class="caption">
+              <h3>Red Banned Circle With Centered Hotspot</h3>
+              <pre>$('#example1')
+    .awesomeCursor('ban', {
+      color: 'red',
+      size: 24,
+      hotspot: 'center'
+    });</pre>
+              <p>
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- /.row -->
+    </section>
+    <hr>
+
+    <!-- Roadmap section -->
+    <section id="roadmap-and-releases">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2>Roadmap and Releases</h2>
+
+          <h4><strong>Roadmap</strong></h4>
+          <p>The following features are currently planned:</p>
+          <ul>
+            <li>Flip cursors horizontally, vertically or in both directions</li>
+            <li>Rotate cursors by an arbitrary number of degrees</li>
+          </ul>
+
+          <p>The following features are being considered, and may or may not get implemented:</p>
+          <ul>
+            <li>Composite cursors built from multiple icons, similarly to how FontAwesome allows icons to be stacked</li>
+            <li>A data attributes API.  This would be an opt-in API, which would behave in a similar to fashion to the data API for <a href="http://getbootstrap.com/javascript/#tooltips">Bootstrap tooltips</a></li>
+          </ul>
+
+          <h4><strong>Releases</strong></h4>
+          <p>To see all releases of the plugin, please visit the <a href="https://github.com/jwarby/jquery-awesome-cursor/releases">releases page on GitHub</a></p>
+        </div>
+      </div>
+    </section>
+    <hr>
+
+    <!-- Bugs and feature requests section -->
+    <section id="bugs-and-feature-requests">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2>Bugs and Feature Requests</h2>
+
+          <p>Please raise any bugs or feature requests on the <a href="https://github.com/jwarby/jquery-awesome-cursor/issues">project's GitHub issue tracker</a></p>
+        </div>
+      </div>
+    </section>
+    <hr>
+
+    <!-- License section -->
+    <section id="license-information">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2>License Information</h2>
+
+          <p>The plugin is licensed under the MIT license and can be found <a href="https://raw.githubusercontent.com/jwarby/jquery-awesome-cursor/master/LICENSE.txt">here</a>.</p>
+
+          <p>For the jQuery and FontAwesome licenses, please refer to that particular project's documentation</p>
+        </div>
+      </div>
+    </section>
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+      <div class="row">
+        <small>
+          <div class="col-lg-4">
+            <p>Copyright &copy; <a href="https://github.com/jwarby">jwarby</a> 2014</p>
+          </div>
+          <div class="col-lg-4 text-center profile-links">
+            <big>
+              <a href="https://twitter.com/warby_" title="warby_ on Twitter"><i class="fa fa-twitter"></i></a>
+              <a href="https://github.com/jwarby" title="jwarby on GitHub"><i class="fa fa-github"></i></a>
+              <a href="https://coderwall.com/warby" title="warby on coderwall"><i class="fa fa-code"></i></a>
+            </big>
+          </div>
+          <div class="col-lg-4 text-right">
+            <p>template from <a href="http://startbootstrap.com/">Start Bootstrap</a>
+            <br>
+            theme by <a href="http://bootswatch.com/">Bootswatch</a></p>
+          </div>
+        </small>
+      </div>
+    </footer>
+
+  </div>
+  <!-- /.container -->
+
+  <!-- jQuery -->
+  <script src="js/jquery.min.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+
+  <script src="bower_components/awesome-cursor/dist/jquery.awesome-cursor.min.js"></script>
+
+  <script src="js/demo.min.js">
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-53489603-2', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+</body>
+
 </html>

@@ -64,7 +64,7 @@ $(window).load(function() {
   // Hotspot demo canvas drawing
   $('canvas').on('mousedown', function(ev) {
     drawing = true;
-  }).on('click mousemove', function(ev) {
+  }).on('mousedown mousemove', function(ev) {
     if (!drawing) {
       return;
     }

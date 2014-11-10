@@ -1,5 +1,5 @@
 {
-  "name": "awesome-cursor",
+  "name": "jquery-awesome-cursor",
   "version": "0.0.0",
   "description": "jQuery plugin for using FontAwesome icons as custom CSS cursors",
   "keywords": [
@@ -9,7 +9,7 @@
     "custom",
     "css"
   ],
-  "homepage": "https://github.com/jwarby/awesome-cursor",
+  "homepage": "https://jwarby.github.io/jquery-awesome-cursor",
   "bugs": "http://github.com/jwarby/jquery-awesome-cursor/issues",
   "author": {
     "name": "James Warwood",
@@ -18,24 +18,28 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jwarby/awesome-cursor.git"
+    "url": "https://github.com/jwarby/jquery-awesome-cursor.git"
   },
   "licenses": [
     {
       "type": "MIT"
     }
   ],
+  "private": true,
+  "main": "dist/jquery.awesome-cursor.j",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": ">=1.8",
+    "fontawesome": "~4.2.0"
+  },
   "devDependencies": {
-    "grunt-contrib-jshint": "~0.10.0",
-    "grunt-contrib-qunit": "~0.5.1",
-    "grunt-contrib-concat": "~0.4.0",
-    "grunt-contrib-uglify": "~0.5.0",
-    "grunt-contrib-watch": "~0.6.1",
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-contrib-connect": "~0.8.0",
-    "time-grunt": "~0.3.2",
-    "load-grunt-tasks": "~0.6.0",
-    "jshint-stylish": "~0.2.0",
-    "grunt": "~0.4.5"
+    "qunit": "~1.12.0",
+    "jquery": ">=1.8"
   }
 }

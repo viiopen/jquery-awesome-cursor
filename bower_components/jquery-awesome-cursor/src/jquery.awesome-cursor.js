@@ -1,7 +1,13 @@
-/*! awesome-cursor - v0.0.0 - 2014-11-05
-* https://github.com/jwarby/awesome-cursor
-* Copyright (c) 2014 James Warwood; Licensed MIT */
-(function($, global, undefined) {
+;(function(global, factory) {
+  if (typeof define === 'function' && define.amd) {
+    define(['jquery'], factory);
+  } else if (typeof exports === 'object') {
+    factory(require('jquery'));
+  } else {
+    factory(global.jQuery);
+  }
+})(this, function($) {
+  'use strict';
 
   /**
    * Parse the user-supplied hotspot string.  Hotspot values as strings are used
@@ -73,9 +79,17 @@
         $.error('First parameter must be the icon name, e.g. \'pencil\'');
       }
 
+      options.size = typeof options.size === 'string' ?
+          parseInt(options.size, 10) : options.size;
+
       if (typeof options.hotspot === 'string') {
         options.hotspot = parseHotspotString(options.hotspot, options.size);
       }
+
+      // Clamp hotspot coordinates between 0 and size - 1
+      options.hotspot = $.map(options.hotspot, function(coordinate) {
+        return Math.min(options.size - 1, Math.max(0, coordinate));
+      });
 
       var srcElement = $('<i />', {
           class: 'fa fa-' + iconName,
@@ -124,9 +138,8 @@
 
   // Expose the defaults so that users can override them if they want to
   $.fn.awesomeCursor.defaults = {
-    icon: '',
     color: '#000000',
     size: 18,
     hotspot: [0, 0]
   };
-})(jQuery, window);
+});

@@ -26,8 +26,8 @@ module.exports = function (grunt) {
         stripBanners: true
       },
       dist: {
-        src: ['src/<%= pkg.name %>.js'],
-        dest: 'dist/jquery.<%= pkg.name %>.js'
+        src: ['src/<%= pkg.name.replace(\'-\', \'.\') %>.js'],
+        dest: 'dist/<%= pkg.name.replace(\'-\', \'.\') %>.js'
       }
     },
     uglify: {
@@ -36,7 +36,7 @@ module.exports = function (grunt) {
       },
       dist: {
         src: '<%= concat.dist.dest %>',
-        dest: 'dist/jquery.<%= pkg.name %>.min.js'
+        dest: 'dist/<%= pkg.name.replace(\'-\', \'.\') %>.min.js'
       }
     },
     qunit: {
@@ -90,12 +90,19 @@ module.exports = function (grunt) {
           port: 9000
         }
       }
+    },
+    unifiedmanifest: {
+      all: {
+        files: {
+          './': '_unified_manifest.json'
+        }
+      }
     }
   });
 
   // Default task.
   grunt.registerTask('default', [
-    'jshint', 'connect', 'qunit', 'clean', 'concat', 'uglify'
+    'jshint', 'unifiedmanifest', 'connect', 'qunit', 'clean', 'concat', 'uglify'
   ]);
   grunt.registerTask('server', function () {
     grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` ' +

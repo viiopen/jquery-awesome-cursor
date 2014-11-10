@@ -1,7 +1,16 @@
 # Contributing
 
+## Getting started
+
+- Install all of the necessary dependencies for development, by running `npm install && bower install`
+- Check that the tests pass by running `grunt test`
+  - You will notice that some of the tests get skipped because they are marked as browser-only.  This is because there are some issues with running the tests from PhantomJS (one such problem is that it doesn't report
+  the cursor hotspot position when getting the value of the `cursor` style).  To run these tests, open the test page in a browser (Chrome users: note that you will have to host the test directory locally due to restrictions
+  on accessing file:// URLs in Chrome);
+
 ## Important notes
-Please don't edit files in the `dist` subdirectory as they are generated via Grunt. You'll find source code in the `src` subdirectory!
+- Please don't edit files in the `dist` subdirectory as they are generated via Grunt. You'll find source code in the `src` subdirectory!
+- Please don't edit `bower.json`, `awesome-cursor.jquery.json` or `package.json` directly, as they are also generated via Grunt.  Instead, make your changes in `_unified_manifest.json`.
 
 ### Code style
 Regarding code style like indentation and whitespace, **follow the conventions you see used in the source already.**

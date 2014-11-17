@@ -416,6 +416,56 @@
                 </div>
               </div>
             </div>
+
+            <!-- Flipping demo -->
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="flip">
+                <h4 class="panel-title">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#options-accordion" href="#flipPanel" aria-expanded="false" aria-controls="flip">
+                    Flip
+                    <i class="fa fa-chevron-circle-down pull-right"></i><i class="fa fa-chevron-circle-up pull-right"></i>
+                    <code class="subtle pull-right">default: ''</code>
+                  </a>
+                </h4>
+              </div>
+              <div id="flipPanel" class="panel-collapse collapse" role="tabpanel" aria-labelledby="flip">
+                <div class="panel-body">
+                  <code class="subtle">type: <strong>String</strong></code>
+                  <p>The cursor can be flipped horizontally, vertically, or in both directions by setting the <code>flip</code> option.</p>
+                  <p>
+                    <code>flip</code> can be one of:
+                    <ul>
+                      <li>horizontal</li>
+                      <li>vertical</li>
+                      <li>both</li>
+                    </ul>
+                    All other values are ignored
+                  </p>
+
+                  <br>
+                  <pre>$('body').awesomeCursor('pencil', {
+    flip: 'horizontal'
+  });</pre>
+
+                  <br>
+                  <h4><u>Try it now!</u></h4>
+                  <form class="form-horizontal try" data-property="flip">
+                    <div class="control-group">
+                      <label for="flip" class="col-lg-1"><big><strong>Flip:</strong></big>
+                      </label>
+                      <div class="col-lg-3">
+                        <select class="form-control" name="flip">
+                          <option value="none">none</option>
+                          <option value="horizontal" selected>horizontal</option>
+                          <option value="vertical">vertical</option>
+                          <option value="both">both</option>
+                        </select>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- Overriding defaults section -->
@@ -480,11 +530,28 @@
             <div class="example" id="example3"></div>
             <div class="caption">
               <h3>Red Banned Circle With Centered Hotspot</h3>
-              <pre>$('#example1')
+              <pre>$('#example3')
     .awesomeCursor('ban', {
       color: 'red',
       size: 24,
       hotspot: 'center'
+    });</pre>
+              <p>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 hero-feature">
+          <div class="thumbnail">
+            <div class="example" id="example4"></div>
+            <div class="caption">
+              <h3>Pink Horizontally Flipped Fighter Jet</h3>
+              <pre>$('#example4')
+    .awesomeCursor('fighter-jet', {
+      color: 'hotpink',
+      size: 24,
+      flip: 'horizontal'
     });</pre>
               <p>
               </p>
@@ -506,7 +573,10 @@
           <h4><strong>Roadmap</strong></h4>
           <p>The following features are currently planned:</p>
           <ul>
-            <li>Flip cursors horizontally, vertically or in both directions</li>
+            <li>
+              <span class="done">Flip cursors horizontally, vertically or in both directions</span>
+              <span class="subtle"><a href="https://github.com/jwarby/jquery-awesome-cursor/releases/tag/v0.0.2"><i class="fa fa-check"></i> v0.0.2</a></span>
+            </li>
             <li>Rotate cursors by an arbitrary number of degrees</li>
             <li>Add optional outline for cursors</li>
             <li>IE11 support (if possible)</li>

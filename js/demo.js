@@ -25,6 +25,9 @@ $(window).load(function() {
   $('#hotspotPanel .panel-body').awesomeCursor('pencil', {
     hotspot: 'bottom left'
   });
+  $('#flipPanel .panel-body').awesomeCursor('pencil', {
+    flip: 'horizontal'
+  });
 
   // Icon demo
   $('#try-icon').on('keyup', 'input', function(ev) {
@@ -100,6 +103,12 @@ $(window).load(function() {
     color: 'red',
     size: 24,
     hotspot: 'center'
+  });
+
+  $('#example4').awesomeCursor('fighter-jet', {
+    color: 'hotpink',
+    size: 24,
+    flip: 'horizontal'
   });
 
   $('section').append($(

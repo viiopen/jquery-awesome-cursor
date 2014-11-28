@@ -1,5 +1,6 @@
 $(window).load(function() {
-  var drawing = false;
+  var drawing = false,
+    backToTopTemplate;
 
   $.fn.awesomeCursor.defaults.color = 'white';
 
@@ -36,6 +37,10 @@ $(window).load(function() {
     }
   });
 
+  $('#try-icon').on('change', function(ev) {
+    trackDemoUsage('icon');
+  });
+
   // Demo forms
   $('form.try').on('change keyup', 'select, input', function(ev) {
     var opts = {},
@@ -50,6 +55,10 @@ $(window).load(function() {
     } else {
       $form.parents('.panel-body').awesomeCursor('pencil', opts);
     }
+
+    if (ev.type === 'change') {
+      trackDemoUsage($(this).parents('form').data('property'));
+    }
   });
 
   // Icon name demo suggestions
@@ -58,6 +67,8 @@ $(window).load(function() {
     $(this).closest('.panel-body').find('input[type="text"]')
       .val($(this).text())
       .trigger('keyup');
+
+    trackDemoUsage('icon (suggested icons)');
   });
 
   $('form').on('submit', function(ev) {
@@ -79,6 +90,8 @@ $(window).load(function() {
     context.fillRect(x - 2.5, y -2.5, 5, 5);
   }).on('mouseout', function(ev) {
     drawing = false;
+
+    trackDemoUsage('hotspot (canvas draw)');
   });
 
   // Hotspot demo clear button
@@ -87,6 +100,8 @@ $(window).load(function() {
       context = $canvas[0].getContext('2d');
 
     context.clearRect(0, 0, $canvas.width(), $canvas.height());
+
+    trackDemoUsage('hotspot (canvas clear)');
   });
 
   // Examples section
@@ -111,9 +126,29 @@ $(window).load(function() {
     flip: 'horizontal'
   });
 
-  $('section').append($(
-    '<a class="text-muted pull-right back-to-top" href="#">' +
-      '<i class="fa fa-angle-up"></i> Back to top' +
-    '</a>'
-  ));
+  backToTopTemplate = $('<a />', {
+    class: 'text-muted pull-right back-to-top',
+    href: '#',
+    'data-ga-category': 'buttons',
+    'data-ga-label': 'navigation',
+    'data-ga-value': 'back-to-top',
+    text: ' Back to top'
+  }).prepend($('<i />', {
+    class: 'fa fa-angle-up',
+  }));
+
+  $('section').append(backToTopTemplate.clone());
+
+
+  // Analytics
+  $('[data-ga-category][data-ga-label]').click(function(ev) {
+    var data = $(this).data(),
+      value = data.gaValue ? parseInt(data.gaValue, 10) : null;
+
+    ga('send', 'event', data.gaCategory, 'click', data.gaLabel, value);
+  });
+
+  function trackDemoUsage(label) {
+    ga('send', 'event', 'demo', 'interaction', label);
+  }
 });

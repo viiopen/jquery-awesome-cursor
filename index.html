@@ -52,7 +52,7 @@
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -61,16 +61,30 @@
         <a class="navbar-brand" href="#">jQuery Awesome Cursor</a>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <div class="collapse navbar-collapse" id="navigation">
         <big>
           <ul class="nav navbar-nav">
-            <li><a href="#installation">Installation</a></li>
-            <li><a href="#usage">Usage</a></li>
-            <li><a href="#options">Options</a></li>
-            <li><a href="#examples">Examples</a></li>
-            <li><a href="#roadmap-and-releases">Roadmap and Releases</a></li>
-            <li><a href="#bugs-and-feature-requests">Bug and Feature Requests</a></li>
-            <li><a href="#license-information">License Information</a></li>
+            <li>
+              <a data-category="buttons" data-label="navigation" data-value="installation" href="#installation">Installation</a>
+            </li>
+            <li>
+              <a data-category="buttons" data-label="navigation" data-value="usage" href="#usage">Usage</a>
+            </li>
+            <li>
+              <a data-category="buttons" data-label="navigation" data-value="options" href="#options">Options</a>
+            </li>
+            <li>
+              <a data-category="buttons" data-label="navigation" data-value="examples" href="#examples">Examples</a>
+            </li>
+            <li>
+              <a data-category="buttons" data-label="navigation" data-value="roadmap-and-releases" href="#roadmap-and-releases">Roadmap and Releases</a>
+            </li>
+            <li>
+              <a data-category="buttons" data-label="navigation" data-value="bugs-and-feature-requests" href="#bugs-and-feature-requests">Bug and Feature Requests</a>
+            </li>
+            <li>
+              <a data-category="buttons" data-label="navigation" data-value="license-information" href="#license-information">License Information</a>
+            </li>
           </ul>
         </big>
       </div>
@@ -89,8 +103,8 @@
       <p>Try hovering over <a href="#" id="demo-link">this!</a></p>
       <br>
       <p>
-        <a href="https://github.com/jwarby/jquery-awesome-cursor" class="btn btn-lg btn-primary"><i class="fa fa-github"></i> View on GitHub</a>
-        <a href="https://github.com/jwarby/jquery-awesome-cursor/fork" class="btn btn-lg btn-success"><i class="fa fa-code-fork"></i> Fork me on GitHub!</a>
+        <a data-ga-category="github links" data-ga-label="home" href="https://github.com/jwarby/jquery-awesome-cursor" class="btn btn-lg btn-primary"><i class="fa fa-github"></i> View on GitHub</a>
+        <a data-ga-category="github links" data-ga-label="fork" href="https://github.com/jwarby/jquery-awesome-cursor/fork" class="btn btn-lg btn-success"><i class="fa fa-code-fork"></i> Fork me on GitHub!</a>
       </p>
     </header>
 
@@ -162,17 +176,43 @@
                   <div class="alert alert-warning">
                     <p>The download links below are for the latest versions of the code, which <strong>may</strong> be unstable.</p>
 
-                    <p>To view the latest <strong>stable</strong> release, and previous releases, please visit <strong><a href="https://github.com/jwarby/jquery-awesome-cursor">https://github.com/jwarby/jquery-awesome-cursor</a></strong>.</p>
+                    <p>To view the latest <strong>stable</strong> release, and previous releases, please visit <strong>
+                      <a
+                        data-ga-category="github links"
+                        data-ga-label="home (via downloads section)"
+                        href="https://github.com/jwarby/jquery-awesome-cursor"
+                        >https://github.com/jwarby/jquery-awesome-cursor</a>
+                    </strong>.</p>
                   </div>
 
                   <p>Download just the script:</p>
-                  <a class="btn btn-primary btn-lg" href="https://raw.githubusercontent.com/jwarby/jquery-awesome-cursor/master/dist/jquery.awesome-cursor.min.js"><i class="fa fa-file-text-o"></i>&nbsp;&nbsp;jquery.awesome-cursor.min.js (production)</a>
-                  <a class="btn btn-primary btn-lg" href="https://raw.githubusercontent.com/jwarby/jquery-awesome-cursor/master/dist/jquery.awesome-cursor.js"><i class="fa fa-file-text"></i>&nbsp;&nbsp;jquery.awesome-cursor.js (development)</a>
+                  <a
+                    data-ga-category="download links"
+                    data-ga-label="minified js"
+                    class="btn btn-primary btn-lg"
+                    href="https://raw.githubusercontent.com/jwarby/jquery-awesome-cursor/master/dist/jquery.awesome-cursor.min.js"
+                    ><i class="fa fa-file-text-o"></i>&nbsp;&nbsp;jquery.awesome-cursor.min.js (production)</a>
+                  <a
+                    data-ga-category="download links"
+                    data-ga-label="development js"
+                    class="btn btn-primary btn-lg"
+                    href="https://raw.githubusercontent.com/jwarby/jquery-awesome-cursor/master/dist/jquery.awesome-cursor.js"
+                    ><i class="fa fa-file-text"></i>&nbsp;&nbsp;jquery.awesome-cursor.js (development)</a>
 
                   <br><br>
                   <p>Or download an archive of the latest code:</p>
-                  <a class="btn btn-primary btn-lg" href="https://github.com/jwarby/jquery-awesome-cursor/zipball/master"><i class="fa fa-file-archive-o"></i>&nbsp;&nbsp;.zip</a>
-                  <a class="btn btn-primary btn-lg" href="https://github.com/jwarby/jquery-awesome-cursor/tarball/master"><i class="fa fa-file-archive-o"></i>&nbsp;&nbsp;.tar.gz</a>
+                  <a
+                    data-ga-category="download links"
+                    data-ga-label="zipball"
+                    class="btn btn-primary btn-lg"
+                    href="https://github.com/jwarby/jquery-awesome-cursor/zipball/master"
+                    ><i class="fa fa-file-archive-o"></i>&nbsp;&nbsp;.zip</a>
+                  <a
+                    data-ga-category="download links"
+                    data-ga-label="tarball"
+                    class="btn btn-primary btn-lg"
+                    href="https://github.com/jwarby/jquery-awesome-cursor/tarball/master"
+                    ><i class="fa fa-file-archive-o"></i>&nbsp;&nbsp;.tar.gz</a>
                   <br>
                   <br>
 
@@ -199,7 +239,7 @@
           <h2>Usage</h2>
 
           <p>To set a cursor on an element, just call <code>$('&lt;selector&gt;').awesomeCursor('&lt;icon name&gt;');</code></p>
-          <p>For example, to use the <a href="http://fontawesome.io/icon/pencil/">pencil icon</a>
+          <p>For example, to use the <a data-ga-category="external links" data-ga-label="fontawesome.com" href="http://fontawesome.io/icon/pencil/">pencil icon</a>
           as the <code>&lt;body&gt;</code> element's cursor, do the following:</p>
           <br>
           <pre>$('body').awesomeCursor('pencil');</pre>
@@ -575,7 +615,11 @@
           <ul>
             <li>
               <span class="done">Flip cursors horizontally, vertically or in both directions</span>
-              <span class="subtle"><a href="https://github.com/jwarby/jquery-awesome-cursor/releases/tag/v0.0.2"><i class="fa fa-check"></i> v0.0.2</a></span>
+              <span class="subtle">
+                <a data-ga-category="github links"
+                  data-ga-label="release v0.0.2"
+                  href="https://github.com/jwarby/jquery-awesome-cursor/releases/tag/v0.0.2"
+                  ><i class="fa fa-check"></i> v0.0.2</a></span>
             </li>
             <li>Rotate cursors by an arbitrary number of degrees</li>
             <li>Add optional outline for cursors</li>
@@ -585,11 +629,19 @@
           <p>The following features are being considered, and may or may not get implemented:</p>
           <ul>
             <li>Composite cursors built from multiple icons, similarly to how FontAwesome allows icons to be stacked</li>
-            <li>A data attributes API.  This would be an opt-in API, which would behave in a similar to fashion to the data API for <a href="http://getbootstrap.com/javascript/#tooltips">Bootstrap tooltips</a></li>
+            <li>A data attributes API.  This would be an opt-in API, which would behave in a similar to fashion to the data API for
+              <a data-ga-category="external links"
+                data-ga-label="bootstrap-tooltips"
+                href="http://getbootstrap.com/javascript/#tooltips"
+                >Bootstrap tooltips</a></li>
           </ul>
 
           <h4><strong>Releases</strong></h4>
-          <p>To see all releases of the plugin, please visit the <a href="https://github.com/jwarby/jquery-awesome-cursor/releases">releases page on GitHub</a></p>
+          <p>To see all releases of the plugin, please visit the
+            <a data-ga-category="gtihub links"
+              data-ga-label="releases"
+              href="https://github.com/jwarby/jquery-awesome-cursor/releases"
+              >releases page on GitHub</a></p>
         </div>
       </div>
     </section>
@@ -601,7 +653,11 @@
         <div class="col-lg-12">
           <h2>Bugs and Feature Requests</h2>
 
-          <p>Please raise any bugs or feature requests on the <a href="https://github.com/jwarby/jquery-awesome-cursor/issues">project's GitHub issue tracker</a></p>
+          <p>Please raise any bugs or feature requests on the
+            <a data-ga-category="github links"
+              data-ga-label="issues"
+              href="https://github.com/jwarby/jquery-awesome-cursor/issues"
+              >project's GitHub issue tracker</a></p>
         </div>
       </div>
     </section>
@@ -613,7 +669,11 @@
         <div class="col-lg-12">
           <h2>License Information</h2>
 
-          <p>The plugin is licensed under the MIT license and can be found <a href="https://raw.githubusercontent.com/jwarby/jquery-awesome-cursor/master/LICENSE.txt">here</a>.</p>
+          <p>The plugin is licensed under the MIT license and can be found
+            <a data-ga-category="github links"
+              data-ga-label="license"
+              href="https://raw.githubusercontent.com/jwarby/jquery-awesome-cursor/master/LICENSE.txt"
+              >here</a>.</p>
 
           <p>For the jQuery and FontAwesome licenses, please refer to that particular project's documentation</p>
         </div>
@@ -626,19 +686,19 @@
       <div class="row">
         <small>
           <div class="col-lg-4">
-            <p>Copyright &copy; <a href="https://github.com/jwarby">jwarby</a> 2014</p>
+            <p>Copyright &copy; <a data-ga-category="social links" data-ga-label="github" href="https://github.com/jwarby">jwarby</a> 2014</p>
           </div>
           <div class="col-lg-4 text-center profile-links">
             <big>
-              <a href="https://twitter.com/warby_" title="warby_ on Twitter"><i class="fa fa-twitter"></i></a>
-              <a href="https://github.com/jwarby" title="jwarby on GitHub"><i class="fa fa-github"></i></a>
-              <a href="https://coderwall.com/warby" title="warby on coderwall"><i class="fa fa-code"></i></a>
+              <a data-ga-category="social links" data-ga-label="twitter" href="https://twitter.com/warby_" title="warby_ on Twitter"><i class="fa fa-twitter"></i></a>
+              <a data-ga-category="social links" data-ga-label="github" href="https://github.com/jwarby" title="jwarby on GitHub"><i class="fa fa-github"></i></a>
+              <a data-ga-category="social links" data-ga-label="coderwall" href="https://coderwall.com/warby" title="warby on coderwall"><i class="fa fa-code"></i></a>
             </big>
           </div>
           <div class="col-lg-4 text-right">
-            <p>template from <a href="http://startbootstrap.com/">Start Bootstrap</a>
+            <p>template from <a data-ga-category="external links" data-ga-label="startbootstrap.com" href="http://startbootstrap.com/">Start Bootstrap</a>
             <br>
-            theme by <a href="http://bootswatch.com/">Bootswatch</a></p>
+            theme by <a data-ga-category="external links" data-ga-label="bootswatch.com" href="http://bootswatch.com/">Bootswatch</a></p>
           </div>
         </small>
       </div>

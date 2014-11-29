@@ -29,6 +29,9 @@ $(window).load(function() {
   $('#flipPanel .panel-body').awesomeCursor('pencil', {
     flip: 'horizontal'
   });
+  $('#rotatePanel .panel-body').awesomeCursor('pencil', {
+    rotate: 45
+  });
 
   // Icon demo
   $('#try-icon').on('keyup', 'input', function(ev) {
@@ -124,6 +127,12 @@ $(window).load(function() {
     color: 'hotpink',
     size: 24,
     flip: 'horizontal'
+  });
+
+  $('#example5').awesomeCursor('hand-o-up', {
+    color: 'skyblue',
+    size: 24,
+    rotate: 45
   });
 
   backToTopTemplate = $('<a />', {

@@ -506,6 +506,42 @@
                 </div>
               </div>
             </div>
+
+            <!-- Rotating demo -->
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="rotate">
+                <h4 class="panel-title">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#options-accordion" href="#rotatePanel" aria-expanded="false" aria-controls="rotate">
+                    Rotate
+                    <i class="fa fa-chevron-circle-down pull-right"></i><i class="fa fa-chevron-circle-up pull-right"></i>
+                    <code class="subtle pull-right">default: 0</code>
+                  </a>
+                </h4>
+              </div>
+              <div id="rotatePanel" class="panel-collapse collapse" role="tabpanel" aria-labelledby="rotate">
+                <div class="panel-body">
+                  <code class="subtle">type: <strong>Number</strong></code>
+                  <p>The cursor can be rotated any number of degrees using the <code>rotate</code> option.</p>
+
+                  <br>
+                  <pre>$('body').awesomeCursor('pencil', {
+    rotate: 45
+  });</pre>
+
+                  <br>
+                  <h4><u>Try it now!</u></h4>
+                  <form class="form-horizontal try" data-property="rotate">
+                    <div class="control-group">
+                      <label for="flip" class="col-lg-2"><big><strong>Rotation (in degrees):</strong></big>
+                      </label>
+                      <div class="col-lg-2 text-right">
+                        <input class="form-control" name="rotate" type="number" value="45" step="5" max="360" min="-360">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- Overriding defaults section -->
@@ -599,6 +635,23 @@
           </div>
         </div>
 
+        <div class="col-md-4 col-sm-6 hero-feature">
+          <div class="thumbnail">
+            <div class="example" id="example5"></div>
+            <div class="caption">
+              <h3>Blue Rotated hand</h3>
+              <pre>$('#example5')
+    .awesomeCursor('hand-o-up', {
+      color: 'skyblue',
+      size: 24,
+      rotate: 45
+    });</pre>
+              <p>
+              </p>
+            </div>
+          </div>
+        </div>
+
       </div>
       <!-- /.row -->
     </section>
@@ -621,7 +674,14 @@
                   href="https://github.com/jwarby/jquery-awesome-cursor/releases/tag/v0.0.2"
                   ><i class="fa fa-check"></i> v0.0.2</a></span>
             </li>
-            <li>Rotate cursors by an arbitrary number of degrees</li>
+            <li>
+              <span class="done">Rotate cursors by an arbitrary number of degrees</span>
+              <span class="subtle">
+                <a data-ga-category="github links"
+                  data-ga-label="release v0.0.4"
+                  href="https://github.com/jwarby/jquery-awesome-cursor/releases/tag/v0.0.4"
+                  ><i class="fa fa-check"></i> v0.0.4</a></span>
+            </li>
             <li>Add optional outline for cursors</li>
             <li>IE11 support (if possible)</li>
           </ul>

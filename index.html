@@ -542,6 +542,43 @@
                 </div>
               </div>
             </div>
+
+            <!-- Outline demo -->
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="outline">
+                <h4 class="panel-title">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#options-accordion" href="#outlinePanel" aria-expanded="false" aria-controls="outline">
+                    Outline
+                    <i class="fa fa-chevron-circle-down pull-right"></i><i class="fa fa-chevron-circle-up pull-right"></i>
+                    <code class="subtle pull-right">default: null</code>
+                  </a>
+                </h4>
+              </div>
+              <div id="outlinePanel" class="panel-collapse collapse" role="tabpanel" aria-labelledby="outline">
+                <div class="panel-body">
+                  <code class="subtle">type: <strong>String</strong></code>
+                  <p>An outline can be applied to a cursor by setting the <code>outline</code> option to any valid CSS color string.</p>
+
+                  <br>
+                  <pre>$('body').awesomeCursor('pencil', {
+    outline: 'black'
+  });</pre>
+
+                  <br>
+                  <h4><u>Try it now!</u></h4>
+                  <form class="form-horizontal try" data-property="outline">
+                    <div class="control-group">
+                      <label for="outline" class="col-lg-1"><big><strong>Outline color:</strong></big>
+                      </label>
+                      <div class="col-lg-3">
+                        <input class="form-control" name="outline" type="text" value="black">
+                      </div>
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- Overriding defaults section -->
@@ -639,12 +676,29 @@
           <div class="thumbnail">
             <div class="example" id="example5"></div>
             <div class="caption">
-              <h3>Blue Rotated hand</h3>
+              <h3>Blue Rotated Hand</h3>
               <pre>$('#example5')
     .awesomeCursor('hand-o-up', {
       color: 'skyblue',
       size: 24,
       rotate: 45
+    });</pre>
+              <p>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 hero-feature">
+          <div class="thumbnail">
+            <div class="example" id="example6"></div>
+            <div class="caption">
+              <h3>Green Pencil With Brown Outline</h3>
+              <pre>$('#example6')
+    .awesomeCursor('pencil', {
+      color: 'limegreen',
+      size: 24,
+      outline: 'brown'
     });</pre>
               <p>
               </p>
@@ -682,7 +736,13 @@
                   href="https://github.com/jwarby/jquery-awesome-cursor/releases/tag/v0.0.4"
                   ><i class="fa fa-check"></i> v0.0.4</a></span>
             </li>
-            <li>Add optional outline for cursors</li>
+            <li>
+              <span class="done">Add optional outline for cursors</span>
+                <a data-ga-category="github links"
+                  data-ga-label="release v0.0.5"
+                  href="https://github.com/jwarby/jquery-awesome-cursor/releases/tag/v0.0.5"
+                  ><i class="fa fa-check"></i> v0.0.5</a></span>
+            </li>
             <li>IE11 support (if possible)</li>
           </ul>
 

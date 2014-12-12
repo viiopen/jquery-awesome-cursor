@@ -32,6 +32,9 @@ $(window).load(function() {
   $('#rotatePanel .panel-body').awesomeCursor('pencil', {
     rotate: 45
   });
+  $('#outlinePanel .panel-body').awesomeCursor('pencil', {
+    outline: 'black'
+  });
 
   // Icon demo
   $('#try-icon').on('keyup', 'input', function(ev) {
@@ -133,6 +136,12 @@ $(window).load(function() {
     color: 'skyblue',
     size: 24,
     rotate: 45
+  });
+
+  $('#example6').awesomeCursor('pencil', {
+    color: 'limegreen',
+    size: 32,
+    outline: 'brown'
   });
 
   backToTopTemplate = $('<a />', {

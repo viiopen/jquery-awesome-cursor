@@ -20,6 +20,9 @@
   font-size: 0.8em;
   min-height: 10em;
   text-align: left;
+  background: #44515e;
+  border: 0;
+  color: #ebebeb;
 }
 footer {
   margin: 50px 0;
@@ -44,6 +47,14 @@ canvas + .clear-canvas {
   background: #5f6f7f;
   margin-top: 10px;
 }
+.well pre {
+  background: #44515e;
+}
+pre.subtle {
+  background: #273848;
+  border: 0;
+  color: #ebebeb;
+}
 code {
   background: #e1e5e9;
   margin: 0 2.5px;
@@ -51,6 +62,8 @@ code {
 code.subtle {
   background: #5f6f7f;
   color: #ebebeb;
+}
+.panel-title code.subtle {
   margin: -5px 30px -5px 0px;
   padding: 5px;
 }
@@ -75,6 +88,13 @@ a[data-toggle="collapse"].collapsed .fa-chevron-circle-down {
 .panel-body code.subtle {
   display: inline-block;
   margin-bottom: 15px;
+  background: #5f6f7f;
+}
+.panel-body pre,
+.panel-body code {
+  background: #44515e;
+  border: 0;
+  color: #ebebeb;
 }
 .panel-body .suggestion {
   margin: 5px;
@@ -90,4 +110,7 @@ footer .profile-links a {
 }
 .done {
   text-decoration: line-through;
+}
+#options .panel-group > div:not(.panel) {
+  margin-top: 2em;
 }

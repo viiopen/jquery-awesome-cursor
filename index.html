@@ -101,6 +101,7 @@
       <h1>jQuery Awesome Cursor</h1>
       <p>A jQuery plugin for using FontAwesome icons as custom CSS cursors.  Works in Chrome and FireFox.</p>
       <p>Try hovering over <a href="#" id="demo-link">this!</a></p>
+      <p><small>Now also supports using an <a href="#using-different-fonts">alternative icon font</a>!</small></p>
       <br>
       <p>
         <a data-ga-category="github links" data-ga-label="home" href="https://github.com/jwarby/jquery-awesome-cursor" class="btn btn-lg btn-primary"><i class="fa fa-github"></i> View on GitHub</a>
@@ -128,10 +129,10 @@
               <div id="bowerPanel" class="panel-collapse collapse" role="tabpanel" aria-labelledby="bower">
                 <div class="panel-body">
                   <p>In your terminal:</p>
-                  <pre>$ bower install jquery-awesome-cursor</pre>
+                  <pre class="subtle">$ bower install jquery-awesome-cursor</pre>
 
                   <p>In your web page:</p>
-                  <pre>
+                  <pre class="subtle">
   &lt;link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css" type="text/css"&gt;
   &lt;script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;
   &lt;script src="bower_components/jquery-awesome-cursor/dist/jquery.awesome-cursor.min.js" type="text/javascript"&gt;&lt;/script&gt;</pre>
@@ -151,10 +152,10 @@
               <div id="npmPanel" class="panel-collapse collapse" role="tabpanel" aria-labelledby="npm">
                 <div class="panel-body">
                   <p>In your terminal:</p>
-                  <pre>$ npm install jquery-awesome-cursor</pre>
+                  <pre class="subtle">$ npm install jquery-awesome-cursor</pre>
 
                   <p>In your web page:</p>
-                  <pre>
+                  <pre class="subtle">
   &lt;link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" type="text/css"&gt;
   &lt;script src="node_modules/jquery/dist/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;
   &lt;script src="node_modules/jquery-awesome-cursor/dist/jquery.awesome-cursor.min.js" type="text/javascript"&gt;&lt;/script&gt;</pre>
@@ -217,7 +218,7 @@
                   <br>
 
                   <p>Then, in your web page:</p>
-                  <pre>
+                  <pre class="subtle">
   &lt;link rel="stylesheet" href="/path/to/font-awesome.min.css" type="text/css"&gt;
   &lt;script src="/path/to/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;
   &lt;script src="/path/to/jquery.awesome-cursor.min.js" type="text/javascript"&gt;&lt;/script&gt;</pre>
@@ -238,17 +239,17 @@
           <!-- Basic demo -->
           <h2>Usage</h2>
 
-          <p>To set a cursor on an element, just call <code>$('&lt;selector&gt;').awesomeCursor('&lt;icon name&gt;');</code></p>
+          <p>To set a cursor on an element, just call <code class="subtle">$('&lt;selector&gt;').awesomeCursor('&lt;icon name&gt;');</code></p>
           <p>For example, to use the <a data-ga-category="external links" data-ga-label="fontawesome.com" href="http://fontawesome.io/icon/pencil/">pencil icon</a>
-          as the <code>&lt;body&gt;</code> element's cursor, do the following:</p>
+          as the <code class="subtle">&lt;body&gt;</code> element's cursor, do the following:</p>
           <br>
-          <pre>$('body').awesomeCursor('pencil');</pre>
+          <pre class="subtle">$('body').awesomeCursor('pencil');</pre>
           <br>
 
           <p>Cursors also support a number of options, which are detailed in the next section.</p>
-          <p>Options are set by passing an object as the second parameter to <code>awesomeCursor()</code>:</p>
+          <p>Options are set by passing an object as the second parameter to <code class="subtle">awesomeCursor()</code>:</p>
           <br>
-          <pre>$('body').awesomeCursor('pencil', {
+          <pre class="subtle">$('body').awesomeCursor('pencil', {
     /* your options here */
   });</pre>
         </div>
@@ -579,13 +580,57 @@
                 </div>
               </div>
             </div>
-          </div>
 
           <!-- Overriding defaults section -->
-          <h4 name="overriding-default-options">Overriding default options</h4>
-          <p>The default values for all options are exposed by <code>$.fn.awesomeCursor.defaults</code>.  This means you can easily override default options:</p>
+          <div>
+            <h4 id="overriding-default-options">Overriding default options</h4>
+            <p>The default values for all options are exposed by <code class="subtle">$.fn.awesomeCursor.defaults</code>.  This means you can easily override default options:</p>
 
-          <pre>$.fn.awesomeCursor.defaults.color = 'white'; // Default color for all cursors is now white </pre>
+            <pre class="subtle">$.fn.awesomeCursor.defaults.color = 'white'; // Default color for all cursors is now white </pre>
+          </div>
+
+          <!-- Alternative font section -->
+          <div>
+            <h4 id="using-different-fonts">Using a different icon font</h4>
+            <p>You may want to use an icon font other than FontAwesome for your cursors - this can be achieved using the <code class="subtle">font</code> option (as of <samp><a data-ga-category="github links"
+                    data-ga-label="release v0.1.0"
+                    href="https://github.com/jwarby/jquery-awesome-cursor/releases/tag/v0.1.0">
+                    v0.1.0</a></samp>).
+            <p>The <code class="subtle">font</code> option is an object, containing the font <code class="subtle">family</code> and <code class="subtle">cssClass</code>.  The example below demonstrates how to use <a href="http://typicons.com/">typicons</a>
+            as the icon font:</pre>
+
+            <pre class="subtle">$('body').awesomeCursor('brush', {
+  font: {
+    family: 'typicons',
+    cssClass: 'typcn typcn-%s'
+  }
+});</pre>
+
+            <ul>
+              <li>The <code class="subtle">family</code> option is the name of the font icon's family.  For FontAwesome, it's 'FontAwesome'; for typicons it's 'typicons'</li>
+              <li>The <code class="subtle">cssClass</code> option is the format of the replacement font icon's CSS classes, where <code class="subtle">%s</code> is the name of the icon passed as the first parameter to <code class="subtle">awesomeCursor</code>.  You can also
+                use a function instead of a string - the function receives the icon name as it's only parameter, and is expected to return the CSS class name for the icon, e.g.
+                <pre class="subtle">
+// ...
+font: {
+  family: 'typicons',
+  cssClass: function(iconName) {
+    return 'typcn typcn-' + iconName;
+  }
+}
+// ...</pre>
+              </li>
+            </ul>
+
+            <br>
+
+            <p>You can set an alternative font as the default in the same way you would <a href="#overriding-default-options">override other defaults</a>:</p>
+            <pre class="subtle">$.fn.awesomeCursor.defaults.font = {
+  family: 'typicons',
+  cssClass: 'typcn typcn-%s'
+};</pre>
+          </div>
+          </div>
         </div>
       </div>
     </section>
@@ -743,6 +788,13 @@
                   href="https://github.com/jwarby/jquery-awesome-cursor/releases/tag/v0.0.5"
                   ><i class="fa fa-check"></i> v0.0.5</a></span>
             </li>
+            <li>
+              <span class="done">Allow a different icon font to FontAwesome to be used</span>
+                <a data-ga-category="github links"
+                  data-ga-label="release v0.1.0"
+                  href="https://github.com/jwarby/jquery-awesome-cursor/releases/tag/v0.1.0"
+                  ><i class="fa fa-check"></i> v0.1.0</a></span>
+            </li>
             <li>IE11 support (if possible)</li>
           </ul>
 
@@ -837,13 +889,17 @@
 
   <script src="js/demo.min.js"></script>
   <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    if (window.location.hostname === 'jwarby.github.io') {
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-53489603-3', 'auto');
-    ga('send', 'pageview');
+      ga('create', 'UA-53489603-3', 'auto');
+      ga('send', 'pageview');
+    } else {
+      window.ga = $.noop;
+    }
 
   </script>
 </body>

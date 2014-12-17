@@ -22,6 +22,9 @@
     font-size: 0.8em;
     min-height: 10em;
     text-align: left;
+    background: #44515e;
+    border: 0;
+    color: rgb(235, 235, 235);
   }
 }
 footer {
@@ -50,17 +53,30 @@ canvas {
     background: #5f6f7f;
     margin-top: 10px;
   }
+
+  pre {
+    background: #44515e;
+  }
 }
+pre.subtle {
+  background: #273848;
+  border: 0;
+  color: rgb(235, 235, 235);
+}
+
 code {
   background: #e1e5e9;
   margin: 0 2.5px;
   &.subtle {
     background: #5f6f7f;
     color: rgb(235, 235, 235);
-    margin: -5px 30px -5px 0px;
-    padding: 5px;
   }
 }
+.panel-title code.subtle {
+  margin: -5px 30px -5px 0px;
+  padding: 5px;
+}
+
 pre {
   background: #e1e5e9;
 }
@@ -85,13 +101,21 @@ a[data-toggle="collapse"].collapsed {
     display: inline-block;
   }
 }
+
 .panel-body {
   code {
     &.subtle {
       display: inline-block;
       margin-bottom: 15px;
+      background: #5f6f7f;
     }
   }
+  pre, code {
+    background: #44515e;
+    border: 0;
+    color: rgb(235, 235, 235);
+  }
+
   .suggestion {
     margin: 5px;
   }
@@ -109,4 +133,8 @@ footer .profile-links a {
 }
 .done {
   text-decoration: line-through;
+}
+
+#options .panel-group > div:not(.panel) {
+  margin-top: 2em;
 }

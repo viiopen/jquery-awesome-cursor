@@ -317,14 +317,15 @@
               <div id="colorPanel" class="panel-collapse collapse" role="tabpanel" aria-labelledby="color">
                 <div class="panel-body">
                   <code class="subtle">type: <strong>String</strong></code>
-                  <p>The color of a cursor can be changed by setting the <code>color</code> option to any valid CSS color string:
-                    <ul>
-                      <li>'red'</li>
-                      <li>'rgb(255, 0, 0)'</li>
-                      <li>'hsl(0, 100%, 50%)'</li>
-                      <li><em>etc.</em></li>
-                    </ul>
+                  <p>
+                  The color of a cursor can be changed by setting the <code>color</code> option to any valid CSS color string:
                   </p>
+                  <ul>
+                    <li>'red'</li>
+                    <li>'rgb(255, 0, 0)'</li>
+                    <li>'hsl(0, 100%, 50%)'</li>
+                    <li><em>etc.</em></li>
+                  </ul>
 
                   <br>
                   <pre>$('body').awesomeCursor('pencil', {
@@ -475,13 +476,15 @@
                   <p>The cursor can be flipped horizontally, vertically, or in both directions by setting the <code>flip</code> option.</p>
                   <p>
                     <code>flip</code> can be one of:
-                    <ul>
-                      <li>horizontal</li>
-                      <li>vertical</li>
-                      <li>both</li>
-                    </ul>
-                    All other values are ignored
                   </p>
+
+                  <ul>
+                    <li>horizontal</li>
+                    <li>vertical</li>
+                    <li>both</li>
+                  </ul>
+
+                    All other values are ignored
 
                   <br>
                   <pre>$('body').awesomeCursor('pencil', {
@@ -597,7 +600,7 @@
                     href="https://github.com/jwarby/jquery-awesome-cursor/releases/tag/v0.1.0">
                     v0.1.0</a></samp>).
             <p>The <code class="subtle">font</code> option is an object, containing the font <code class="subtle">family</code> and <code class="subtle">cssClass</code>.  The example below demonstrates how to use <a href="http://typicons.com/">typicons</a>
-            as the icon font:</pre>
+            as the icon font:
 
             <pre class="subtle">$('body').awesomeCursor('brush', {
   font: {
@@ -786,14 +789,14 @@ font: {
                 <a data-ga-category="github links"
                   data-ga-label="release v0.0.5"
                   href="https://github.com/jwarby/jquery-awesome-cursor/releases/tag/v0.0.5"
-                  ><i class="fa fa-check"></i> v0.0.5</a></span>
+                  ><i class="fa fa-check"></i> v0.0.5</a>
             </li>
             <li>
               <span class="done">Allow a different icon font to FontAwesome to be used</span>
                 <a data-ga-category="github links"
                   data-ga-label="release v0.1.0"
                   href="https://github.com/jwarby/jquery-awesome-cursor/releases/tag/v0.1.0"
-                  ><i class="fa fa-check"></i> v0.1.0</a></span>
+                  ><i class="fa fa-check"></i> v0.1.0</a>
             </li>
             <li>IE11 support (if possible)</li>
           </ul>
@@ -856,23 +859,21 @@ font: {
     <!-- Footer -->
     <footer>
       <div class="row">
-        <small>
-          <div class="col-lg-4">
-            <p>Copyright &copy; <a data-ga-category="social links" data-ga-label="github" href="https://github.com/jwarby">jwarby</a> 2014</p>
-          </div>
-          <div class="col-lg-4 text-center profile-links">
-            <big>
-              <a data-ga-category="social links" data-ga-label="twitter" href="https://twitter.com/warby_" title="warby_ on Twitter"><i class="fa fa-twitter"></i></a>
-              <a data-ga-category="social links" data-ga-label="github" href="https://github.com/jwarby" title="jwarby on GitHub"><i class="fa fa-github"></i></a>
-              <a data-ga-category="social links" data-ga-label="coderwall" href="https://coderwall.com/warby" title="warby on coderwall"><i class="fa fa-code"></i></a>
-            </big>
-          </div>
-          <div class="col-lg-4 text-right">
-            <p>template from <a data-ga-category="external links" data-ga-label="startbootstrap.com" href="http://startbootstrap.com/">Start Bootstrap</a>
-            <br>
-            theme by <a data-ga-category="external links" data-ga-label="bootswatch.com" href="http://bootswatch.com/">Bootswatch</a></p>
-          </div>
-        </small>
+        <div class="col-lg-4">
+          <p>Copyright &copy; <a data-ga-category="social links" data-ga-label="github" href="https://github.com/jwarby">jwarby</a> 2014</p>
+        </div>
+        <div class="col-lg-4 text-center profile-links">
+          <big>
+            <a data-ga-category="social links" data-ga-label="twitter" href="https://twitter.com/warby_" title="warby_ on Twitter"><i class="fa fa-twitter"></i></a>
+            <a data-ga-category="social links" data-ga-label="github" href="https://github.com/jwarby" title="jwarby on GitHub"><i class="fa fa-github"></i></a>
+            <a data-ga-category="social links" data-ga-label="coderwall" href="https://coderwall.com/warby" title="warby on coderwall"><i class="fa fa-code"></i></a>
+          </big>
+        </div>
+        <div class="col-lg-4 text-right">
+          <p>template from <a data-ga-category="external links" data-ga-label="startbootstrap.com" href="http://startbootstrap.com/">Start Bootstrap</a>
+          <br>
+          theme by <a data-ga-category="external links" data-ga-label="bootswatch.com" href="http://bootswatch.com/">Bootswatch</a></p>
+        </div>
       </div>
     </footer>
 

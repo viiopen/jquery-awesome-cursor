@@ -1,6 +1,6 @@
-/*! jquery-awesome-cursor - v0.1.0 - 2014-12-17
+/*! jquery-awesome-cursor - v0.1.0 - 2015-01-23
 * https://jwarby.github.io/jquery-awesome-cursor
-* Copyright (c) 2014 James Warwood; Licensed MIT */
+* Copyright (c) 2015 James Warwood; Licensed MIT */
 ;(function(global, factory) {
   if (typeof define === 'function' && define.amd) {
     define(['jquery'], factory);
@@ -115,119 +115,128 @@
     return flippedCanvas;
   }
 
+  function createCursorURL (iconName, options) {
+    options = $.extend({}, $.fn.awesomeCursor.defaults, options);
+
+    if (typeof iconName !== 'string' || !iconName) {
+      $.error('First parameter must be the icon name, e.g. \'pencil\'');
+    }
+
+    options.size = typeof options.size === 'string' ?
+        parseInt(options.size, 10) : options.size;
+
+    if (typeof options.hotspot === 'string') {
+      options.hotspot = parseHotspotString(options.hotspot, options.size);
+    }
+
+    // Clamp hotspot coordinates between 0 and size - 1
+    options.hotspot = $.map(options.hotspot, function(coordinate) {
+      return Math.min(options.size - 1, Math.max(0, coordinate));
+    });
+
+    var cssClass = (function(name, template) {
+        if (typeof template === 'string') {
+          return template.replace(/%s/g, name);
+        } else if (typeof template === 'function') {
+          return template(name);
+        }
+
+        return name;
+      })(iconName, options.font.cssClass),
+      srcElement = $('<i />', {
+        class: cssClass,
+        style: 'position: absolute; left: -9999px; top: -9999px;'
+      }),
+      canvas = $('<canvas />')[0],
+      canvasSize = options.size,
+      hotspotOffset, unicode, dataURL, context;
+
+    // Render element to the DOM, otherwise `getComputedStyle` will not work
+    $('body').append(srcElement);
+
+    // Get the unicode value of the icon
+    unicode = window.getComputedStyle(srcElement[0], ':before')
+        .getPropertyValue('content');
+
+    // Remove the source element from the DOM
+    srcElement.remove();
+
+    // Increase the size of the canvas to account for the cursor's outline
+    if (options.outline) {
+      canvasSize += 2;
+    }
+
+    if (options.rotate) {
+
+      // @TODO: move this into it's own function
+      canvasSize = Math.ceil(Math.sqrt(
+        Math.pow(canvasSize, 2) + Math.pow(canvasSize, 2)
+      ));
+
+      hotspotOffset = (canvasSize - options.size) / 2;
+      canvas.width = canvasSize;
+      canvas.height = canvasSize;
+
+      context = canvas.getContext('2d');
+      context.translate(canvas.width / 2, canvas.height / 2);
+
+      // Canvas API works in radians, not degrees, hence `* Math.PI / 180`
+      context.rotate(options.rotate * Math.PI / 180);
+      context.translate(-canvas.width / 2, -canvas.height / 2);
+
+      // Translate hotspot offset
+      options.hotspot[0] += options.hotspot[0] !== canvas.width / 2 ?
+          hotspotOffset : 0;
+
+      options.hotspot[1] += options.hotspot[1] !== canvas.height / 2 ?
+          hotspotOffset : 0;
+    } else {
+
+      canvas.height = canvasSize;
+      canvas.width = canvasSize;
+
+      context = canvas.getContext('2d');
+    }
+
+    // Draw the cursor to the canvas
+    context.fillStyle = options.color;
+    context.font = options.size + 'px ' + options.font.family;
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.fillText(unicode, canvasSize / 2, canvasSize / 2);
+
+    // Check for outline option
+    if (options.outline) {
+      context.lineWidth = 0.5;
+      context.strokeStyle = options.outline;
+      context.strokeText(unicode, canvasSize / 2, canvasSize / 2);
+    }
+
+    // Check flip option
+    if (options.flip) {
+      canvas = flipCanvas(canvas, options.flip);
+    }
+
+    dataURL = canvas.toDataURL('image/png');
+
+    return [
+      'url(' + dataURL + ')',
+      options.hotspot[0],
+      options.hotspot[1],
+      ',',
+      'auto'
+    ].join(' ');
+  }
+
+  $.extend({
+    awesomeCursor: function (iconName, options) {
+      return createCursorURL(iconName, options);
+    }
+  });
+
   $.fn.extend({
     awesomeCursor: function(iconName, options) {
-      options = $.extend({}, $.fn.awesomeCursor.defaults, options);
-
-      if (typeof iconName !== 'string' || !iconName) {
-        $.error('First parameter must be the icon name, e.g. \'pencil\'');
-      }
-
-      options.size = typeof options.size === 'string' ?
-          parseInt(options.size, 10) : options.size;
-
-      if (typeof options.hotspot === 'string') {
-        options.hotspot = parseHotspotString(options.hotspot, options.size);
-      }
-
-      // Clamp hotspot coordinates between 0 and size - 1
-      options.hotspot = $.map(options.hotspot, function(coordinate) {
-        return Math.min(options.size - 1, Math.max(0, coordinate));
-      });
-
-      var cssClass = (function(name, template) {
-          if (typeof template === 'string') {
-            return template.replace(/%s/g, name);
-          } else if (typeof template === 'function') {
-            return template(name);
-          }
-
-          return name;
-        })(iconName, options.font.cssClass),
-        srcElement = $('<i />', {
-          class: cssClass,
-          style: 'position: absolute; left: -9999px; top: -9999px;'
-        }),
-        canvas = $('<canvas />')[0],
-        canvasSize = options.size,
-        hotspotOffset, unicode, dataURL, context;
-
-      // Render element to the DOM, otherwise `getComputedStyle` will not work
-      $('body').append(srcElement);
-
-      // Get the unicode value of the icon
-      unicode = window.getComputedStyle(srcElement[0], ':before')
-          .getPropertyValue('content');
-
-      // Remove the source element from the DOM
-      srcElement.remove();
-
-      // Increase the size of the canvas to account for the cursor's outline
-      if (options.outline) {
-        canvasSize += 2;
-      }
-
-      if (options.rotate) {
-
-        // @TODO: move this into it's own function
-        canvasSize = Math.ceil(Math.sqrt(
-          Math.pow(canvasSize, 2) + Math.pow(canvasSize, 2)
-        ));
-
-        hotspotOffset = (canvasSize - options.size) / 2;
-        canvas.width = canvasSize;
-        canvas.height = canvasSize;
-
-        context = canvas.getContext('2d');
-        context.translate(canvas.width / 2, canvas.height / 2);
-
-        // Canvas API works in radians, not degrees, hence `* Math.PI / 180`
-        context.rotate(options.rotate * Math.PI / 180);
-        context.translate(-canvas.width / 2, -canvas.height / 2);
-
-        // Translate hotspot offset
-        options.hotspot[0] += options.hotspot[0] !== canvas.width / 2 ?
-            hotspotOffset : 0;
-
-        options.hotspot[1] += options.hotspot[1] !== canvas.height / 2 ?
-            hotspotOffset : 0;
-      } else {
-
-        canvas.height = canvasSize;
-        canvas.width = canvasSize;
-
-        context = canvas.getContext('2d');
-      }
-
-      // Draw the cursor to the canvas
-      context.fillStyle = options.color;
-      context.font = options.size + 'px ' + options.font.family;
-      context.textAlign = 'center';
-      context.textBaseline = 'middle';
-      context.fillText(unicode, canvasSize / 2, canvasSize / 2);
-
-      // Check for outline option
-      if (options.outline) {
-        context.lineWidth = 0.5;
-        context.strokeStyle = options.outline;
-        context.strokeText(unicode, canvasSize / 2, canvasSize / 2);
-      }
-
-      // Check flip option
-      if (options.flip) {
-        canvas = flipCanvas(canvas, options.flip);
-      }
-
-      dataURL = canvas.toDataURL('image/png');
-
-      $(this).css('cursor', [
-        'url(' + dataURL + ')',
-        options.hotspot[0],
-        options.hotspot[1],
-        ',',
-        'auto'
-      ].join(' '));
-
+      $(this).css('cursor', $.awesomeCursor(iconName, options));
       // Maintain chaining
       return this;
     }

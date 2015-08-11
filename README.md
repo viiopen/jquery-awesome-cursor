@@ -2,7 +2,7 @@
 
 Forked from https://github.com/jwarby/jquery-awesome-cursor.git
 
-# Additions
+## Additions
 
 Added method to create an awesome cursor definition without creating a new DOM element
 

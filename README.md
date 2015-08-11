@@ -1,3 +1,11 @@
+# viiopen notes
+
+Forked from https://github.com/jwarby/jquery-awesome-cursor.git
+
+# Additions
+
+Added method to create an awesome cursor definition without creating a new DOM element
+
 # jQuery Awesome Cursor plugin [![GitHub version](https://badge.fury.io/gh/jwarby%2Fjquery-awesome-cursor.svg)](http://badge.fury.io/gh/jwarby%2Fjquery-awesome-cursor)
 
 [![Build Status](https://secure.travis-ci.org/jwarby/jquery-awesome-cursor.png?branch=master)](https://travis-ci.org/jwarby/jquery-awesome-cursor)

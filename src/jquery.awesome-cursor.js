@@ -192,8 +192,31 @@
       canvas.height = canvasSize;
       canvas.width = canvasSize;
 
+<<<<<<< HEAD
       context = canvas.getContext('2d');
     }
+=======
+      /* Firefox wraps the extracted unicode value in double quotes - #10
+       *
+       * @debug Some versions of Chrome may be wrapping the extracted unicode
+       * value in single quotes see if this fixes - #14
+       */
+      unicode = unicode.replace(/['"]/g, '');
+
+      // Draw the cursor to the canvas
+      context.fillStyle = options.color;
+      context.font = options.size + 'px ' + options.font.family;
+      context.textAlign = 'center';
+      context.textBaseline = 'middle';
+      context.fillText(unicode, canvasSize / 2, canvasSize / 2);
+
+      // Check for outline option
+      if (options.outline) {
+        context.lineWidth = 0.5;
+        context.strokeStyle = options.outline;
+        context.strokeText(unicode, canvasSize / 2, canvasSize / 2);
+      }
+>>>>>>> upstream/master
 
     // Draw the cursor to the canvas
     context.fillStyle = options.color;

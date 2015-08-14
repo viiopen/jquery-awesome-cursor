@@ -1,6 +1,10 @@
 {
   "name": "jquery-awesome-cursor",
+<<<<<<< HEAD
   "version": "0.1.01",
+=======
+  "version": "0.1.2",
+>>>>>>> upstream/master
   "description": "jQuery plugin for using FontAwesome icons as custom CSS cursors",
   "keywords": [
     "jquery-plugin",

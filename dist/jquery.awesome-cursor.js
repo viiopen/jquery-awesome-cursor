@@ -1,5 +1,6 @@
-/*! jquery-awesome-cursor - v0.1.01 - 2015-01-23
+/*! jquery-awesome-cursor - v0.1.3 - 2015-08-14
 * https://jwarby.github.io/jquery-awesome-cursor
+* https://github.com/viiopen/jquery-awesome-cursor
 * Copyright (c) 2015 James Warwood; Licensed MIT */
 ;(function(global, factory) {
   if (typeof define === 'function' && define.amd) {
@@ -197,6 +198,13 @@
 
       context = canvas.getContext('2d');
     }
+
+    /* Firefox wraps the extracted unicode value in double quotes - #10
+     *
+     * @debug Some versions of Chrome may be wrapping the extracted unicode
+     * value in single quotes see if this fixes - #14
+     */
+    unicode = unicode.replace(/['"]/g, '');
 
     // Draw the cursor to the canvas
     context.fillStyle = options.color;
